@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-
+// 저장 노선
 public class SavedRouteActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +18,9 @@ public class SavedRouteActivity extends AppCompatActivity {
 
         ImageView goback = findViewById(R.id.goback);
 
-        goback.setOnClickListener(new View.OnClickListener() {
+        goback.setOnClickListener(new View.OnClickListener() { // 뒤로가기 누르면 메뉴로
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SubActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
                 startActivity(intent);
             }
         });

@@ -30,31 +30,47 @@
         android:layout_marginRight="9dp"
         android:src="@drawable/goback" />
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="253dp"
+    <TextView
+        android:id="@+id/middle_text"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerVertical="true"
         android:layout_marginStart="78dp"
         android:layout_marginLeft="78dp"
-        android:layout_marginEnd="79dp"
-        android:layout_marginRight="79dp"
-        android:layout_marginBottom="521dp"
-        android:hint="ENTER THE STATION"
-        android:imeOptions="actionSearch"
-        android:inputType="number" />
+        android:layout_marginTop="134dp"
+        android:text="중간에 어디서 만나야 할까? 🚇"
+        android:textSize="20dp"
+        android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/flagText"
+        android:id="@+id/me"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/editText"
-        android:layout_marginBottom="-99dp"
-        android:text="어느 액티비티에서 온지 표시할 텍스트" />
+        android:layout_alignBottom="@+id/middle_text"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="291dp"
+        android:layout_marginRight="291dp"
+        android:layout_marginBottom="-207dp"
+        android:text="나"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
+    <TextView
+        android:id="@+id/you"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/middle_text"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginEnd="88dp"
+        android:layout_marginRight="88dp"
+        android:layout_marginBottom="-205dp"
+        android:text="상대"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
 </RelativeLayout>

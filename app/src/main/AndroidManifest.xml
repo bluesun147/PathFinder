@@ -22,6 +22,8 @@
         <activity android:name=".SearchActivity"/>
         <activity android:name=".SavedRouteActivity"/>
         <activity android:name=".SearchStationActivity"/>
+        <activity android:name=".ResultActivity"/>
+        <activity android:name=".MiddleStationActivity"/>
 
     </application>
 

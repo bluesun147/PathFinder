@@ -6,25 +6,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-// 맨 처음 시작 페이지
-// https://ukebox.tistory.com/42 깃허브
-public class FrontActivity extends AppCompatActivity {
 
+public class ResultActivity extends AppCompatActivity {
+    // 결과 경로 3개 보여주는 화면. 노선 보여주기 이전 화면 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.front_page);
+        setContentView(R.layout.result_page);
 
         ImageButton button = findViewById(R.id.button);
 
 
-        button.setOnClickListener(new View.OnClickListener() {
+        /*button.setOnClickListener(new View.OnClickListener() { // 경로 확인 누르면 경로 보여줌
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(), "짧게 출력 Hello World!", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(getApplicationContext(), SubActivity.class);
+                Intent intent = new Intent(getApplicationContext(), 경로.class);
                 startActivity(intent);
             }
-        });
+        });*/
 
     }
 }

@@ -35,11 +35,11 @@ public class SearchStationActivity extends AppCompatActivity {
         });
 
         // "도착"버튼 누르면 결과 페이지로
-        /*search_end.setOnClickListener(new View.OnClickListener() {
+        search_end.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), 결과.class);
+                Intent intent = new Intent(getApplicationContext(), ResultActivity.class);
                 startActivity(intent);
             }
-        });*/
+        });
     }
 }
