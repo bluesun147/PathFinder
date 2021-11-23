@@ -60,13 +60,5 @@
         android:imeOptions="actionSearch"
         android:inputType="number" />
 
-    <TextView
-        android:id="@+id/flagText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/enterEnd"
-        android:layout_marginBottom="-244dp"
-        android:text="어느 액티비티에서 온지 표시할 텍스트" />
-
 
 </RelativeLayout>
