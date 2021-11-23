@@ -5,14 +5,8 @@
 
     <ImageView
         android:id="@+id/circle"
-        android:layout_width="316dp"
-        android:layout_height="137dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="-86dp"
-        android:layout_marginTop="-2dp"
-        android:layout_marginBottom="595dp"
+        android:layout_width="146dp"
+        android:layout_height="143dp"
         android:src="@drawable/twocircle" />
 
     <ImageView

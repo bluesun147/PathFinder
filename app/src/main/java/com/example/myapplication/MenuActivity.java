@@ -39,7 +39,7 @@ public class MenuActivity extends AppCompatActivity {
 
         middle.setOnClickListener(new View.OnClickListener() { // 중간 역 페이지로 이동
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), MiddleStationActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MiddleSearchActivity.class);
                 startActivity(intent);
             }
         });

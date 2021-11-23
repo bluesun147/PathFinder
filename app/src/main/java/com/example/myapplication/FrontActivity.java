@@ -2,10 +2,15 @@ package com.example.myapplication;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
+
 // 맨 처음 시작 페이지
 // https://ukebox.tistory.com/42 깃허브
 public class FrontActivity extends AppCompatActivity {
@@ -20,7 +25,7 @@ public class FrontActivity extends AppCompatActivity {
 
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
-                //Toast.makeText(getApplicationContext(), "짧게 출력 Hello World!", Toast.LENGTH_SHORT).show();
+
                 Intent intent = new Intent(getApplicationContext(), SubActivity.class);
                 startActivity(intent);
             }

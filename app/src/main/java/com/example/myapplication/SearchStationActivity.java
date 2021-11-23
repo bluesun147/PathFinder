@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
-
+// 이거 우선 안씀 //////////////////////////////////////////////////////////////
 public class SearchStationActivity extends AppCompatActivity {
 
     @Override

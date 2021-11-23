@@ -5,14 +5,8 @@
 
     <ImageView
         android:id="@+id/circle"
-        android:layout_width="316dp"
-        android:layout_height="137dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginLeft="-87dp"
-        android:layout_marginTop="0dp"
-        android:layout_marginBottom="593dp"
+        android:layout_width="146dp"
+        android:layout_height="143dp"
         android:src="@drawable/twocircle" />
 
     <ImageView
@@ -48,7 +42,7 @@
 
 
     <com.github.chrisbanes.photoview.PhotoView
-        android:id="@+id/photoView"
+        android:id="@+id/map"
         android:layout_width="match_parent"
         android:layout_height="637dp"
         android:layout_alignBottom="@+id/circle"

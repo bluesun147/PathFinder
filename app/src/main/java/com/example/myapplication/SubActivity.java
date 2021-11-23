@@ -35,8 +35,18 @@ public class SubActivity extends AppCompatActivity {
 
         search.setOnClickListener(new View.OnClickListener() { // 검색 눌렀을 시 검색 페이지로 이동
             public void onClick(View view) {
-                Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
-                startActivity(intent);
+                //Intent intent = new Intent(getApplicationContext(), SearchActivity.class);
+                //startActivity(intent);
+
+
+                String startStation = "출발 역을 입력하세요";
+                String endStation = "도착 역을 입력하세요";
+
+                Intent intent = new Intent(getBaseContext(), SearchActivity.class);
+                //tartActivity(intent);
+                intent.putExtra("startStation", startStation);
+                intent.putExtra("endStation", endStation);
+                startActivityForResult(intent, 1000);
             }
         });
     }
