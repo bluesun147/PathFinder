@@ -46,7 +46,6 @@ public class SearchActivity extends AppCompatActivity
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {  // 입력 후 돋보기 누르면
                     String start = enterStart.getText().toString(); // start에 출발 역 저장
-
                     Intent intent = new Intent(getBaseContext(), ResultActivity.class);
                     intent.putExtra("start", start); // ResultActivity에 출발역 값 저장
 
@@ -57,7 +56,6 @@ public class SearchActivity extends AppCompatActivity
                             if (actionId == EditorInfo.IME_ACTION_SEARCH) {  // 입력 후 돋보기 누르면 search_page_start로 넘어감. 누르면 searchStationActivity 바뀜
                                 String end = enterEnd.getText().toString(); // end에 도착 역 저장
 
-                                //Intent intent = new Intent(getBaseContext(), ResultActivity.class);
                                 intent.putExtra("end", end); // 다른 액티비티에서 사용. https://itsaessak.tistory.com/342
                                 startActivity(intent); // ResultActivity로 이동
                             }

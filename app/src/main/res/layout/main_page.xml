@@ -41,7 +41,17 @@
         android:src="@drawable/search" />
 
 
-
+    <Button
+        android:id="@+id/otherApp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginRight="144dp"
+        android:text="다른 앱 열기" />
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/map"
@@ -57,6 +67,6 @@
         android:layout_marginEnd="0dp"
         android:layout_marginRight="0dp"
         android:layout_marginBottom="-593dp"
-        android:src="@drawable/map" />
+        android:src="@drawable/mapjpg" />
 
 </RelativeLayout>

@@ -6,6 +6,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
@@ -21,6 +22,14 @@ public class FrontActivity extends AppCompatActivity {
         setContentView(R.layout.front_page);
 
         ImageButton button = findViewById(R.id.button);
+
+        Button toast = findViewById(R.id.toast);
+
+        toast.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View view) {
+                Toast.makeText(getApplicationContext(), "버튼이 눌렸습니다!", Toast.LENGTH_LONG).show();
+            }
+        });
 
 
         button.setOnClickListener(new View.OnClickListener() {
