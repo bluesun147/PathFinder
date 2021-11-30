@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- ResultMapActivity -->
+
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_width="146dp"
+        android:layout_height="143dp"
+        android:src="@drawable/twocircle" />
+
+
+    <ImageView
+        android:id="@+id/goback"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="345dp"
+        android:layout_marginLeft="345dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="9dp"
+        android:layout_marginRight="9dp"
+        android:src="@drawable/goback" />
+
+    <ImageView
+        android:id="@+id/save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="86dp"
+        android:layout_marginLeft="86dp"
+        android:layout_marginTop="121dp"
+        android:src="@drawable/save" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/save"
+        android:layout_alignBottom="@+id/save"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="70dp"
+        android:layout_marginLeft="70dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="-24dp"
+        android:text="경로 저장" />
+
+    <ImageView
+        android:id="@+id/bell"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="118dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:src="@drawable/bell" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/bell"
+        android:layout_alignBottom="@+id/save"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="4dp"
+        android:layout_marginEnd="106dp"
+        android:layout_marginRight="106dp"
+        android:layout_marginBottom="-23dp"
+        android:text="알람" />
+
+    <TextView
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginRight="125dp"
+        android:textStyle="bold"
+        android:text="도착역: " />
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="266dp"
+        android:layout_marginRight="266dp"
+        android:textStyle="bold"
+        android:text="출발역: " />
+
+    <com.github.chrisbanes.photoview.PhotoView
+        android:id="@+id/map"
+        android:layout_width="401dp"
+        android:layout_height="385dp"
+        android:layout_alignBottom="@+id/circle"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="1dp"
+        android:layout_marginRight="1dp"
+        android:layout_marginBottom="-433dp"
+        android:src="@drawable/mapjpg" />
+
+    <TextView
+        android:id="@+id/printRecommRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="108dp"
+        android:text="경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/recommCosts"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_alignBottom="@+id/printRecommRoute"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="53dp"
+        android:text="소요 시간 0분, 소요 비용 0원" />
+
+
+</RelativeLayout>
