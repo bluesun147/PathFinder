@@ -71,13 +71,21 @@ public class SavedRouteActivity extends AppCompatActivity {
             ListView.setAdapter(Adapter);
         }
 
-        Intent intent = getIntent(); /////////////////////////////////////////////////////////////////////////////
-        //add.setText(intent.getExtras().getString("route")); // MainActivity에서 입력한 값을 버튼 텍스트로 설정
-        com.example.myapplication.sampleData.b = intent.getExtras().getString("route"); // 경로추가 버튼 누르면 입력한 값을 추가
+
 
         View.OnClickListener buttonListener = new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                Intent intent = getIntent(); /////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+                com.example.myapplication.sampleData.b = intent.getExtras().getString("route"); // 경로추가 버튼 누르면 입력한 값을 추가
+
                 if (Datas.isEmpty()) { //Datas 리스트가 비어있을 때 만약 비어있다면 값을 추가하고 list와 listview연결
                     data = sampleData.sampleReturn(); //데이터를 저장할 것이므로 경로 스트링 값이 리턴되는 메소드를 불러와서 그 값을 data에 저장해준다.
                     sql = String.format("INSERT INTO history VALUES(NULL,'%s');", data); //db에 데이터를 추가하는 쿼리
@@ -88,7 +96,6 @@ public class SavedRouteActivity extends AppCompatActivity {
                 }
                 else {  //Datas 안에 값이 존재하는 경우
                     data = sampleData.sampleReturn();
-                    //data = lineStrArr.getText().toString();
                     //데이터를 저장할 것이므로 경로 스트링 값이 리턴되는 메소드를 불러와서 그 값을 data에 저장해준다.
                     sql = String.format("INSERT INTO history VALUES(NULL,'%s');", data);
                     db.execSQL(sql);
