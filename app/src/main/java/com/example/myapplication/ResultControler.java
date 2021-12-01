@@ -228,7 +228,7 @@ public class ResultControler
 		System.out.println("총 거리 : " + dist);
 		System.out.println("총 비용 : " + cost);
 		System.out.println();*/
-		return result = result + time + "(초!)";
+		return result = result + time + "@";
 	}
 
 	public int getTimeData(int startIdx, int endIdx, int[][] dataArr)

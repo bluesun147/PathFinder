@@ -64,6 +64,8 @@ public class ResultMapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_map_page);
 
+
+
         // 알람 관련
         Bitmap mLargeIconForNoti = BitmapFactory.decodeResource(getResources(), R.drawable.bell);
         PendingIntent mPendingIntent  = PendingIntent.getActivity(ResultMapActivity.this,0,new Intent(getApplicationContext(), ResultMapActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
@@ -92,7 +94,7 @@ public class ResultMapActivity extends AppCompatActivity {
         int lengthqq = intent.getExtras().getInt("routeLength");
 
         String alarmqq = intent.getExtras().getString("alarmTime"); // 알람 시간 스트링. split으로 배열로 만들어서
-        String[] alarmArr = alarmqq.split("(초!!)"); // for(Integer.parseInt(arr[i])) 마다 알람 울리게.
+        String[] alarmArr = alarmqq.split("@"); // for(Integer.parseInt(arr[i])) 마다 알람 울리게.
 
         Handler handler = new Handler();
 
@@ -195,7 +197,7 @@ public class ResultMapActivity extends AppCompatActivity {
                             mNotificationManager.notify(0, mbuilder.build());
                         }
                     };
-                    timer.schedule(func, 1000, 2000);
+                    timer.schedule(func, 0, Integer.parseInt(alarmArr[i])*1000 - 6000); // 내려야 할 시간 1분 전에 알림
                 }
 
 
