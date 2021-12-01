@@ -22,8 +22,9 @@ public class ResultControler
 	}
 
 	// 다익스트라 알고리즘의 결과값을 받아 데이터를 계산 & 출력하는 클래스
-	public void calculateData(int startStn, int endStn, int[] stnList, String[] lineStrArr, int[][] dataDarr, int index)
+	public void calculateData(int startStn, int endStn, int[] stnList, String[] lineStrArr, int[][] dataDarr, int index, String[] alarmCount)
 	{
+		alarmCount[index] = "";
 		//System.out.println(DataChange.numToStn(startStn) + "역 에서 " + DataChange.numToStn(endStn) + "역 으로 가는 노선");
 		int[][] dataArr = makeDataArr(endStn, stnList);
 		int count = getCount(dataArr);
@@ -33,6 +34,8 @@ public class ResultControler
 		//printData(0, count, dataArr);
 
 		lineStrArr[index] = getPrintStation(count, 0, dataArr);
+
+
 		dataDarr[index][0] = getTimeData(0, count, dataArr); // 시간
 		dataDarr[index][1] = getDistData(0, count, dataArr); // 거리
 		dataDarr[index][2] = getCostData(0, count, dataArr); // 비용
@@ -45,23 +48,23 @@ public class ResultControler
 		int next = count;
 
 		// 환승역 사이 데이터 출력
-		/*while (true)
+		while (true)
 		{
 			if (pre != 0)
 			{
-				printData(pre, next, dataArr);
-				System.out.println(next + " " + pre);
+				alarmCount[index] += printData(pre, next, dataArr);
 				next = pre;
 				pre = transferStationArr[++transferStationNumber];
 
 			}
 			else
 			{
-				printData(0, next, dataArr);
-				System.out.println(0 + " " + next);
+				alarmCount[index] += printData(0, next, dataArr);
+				//printData(0, next, dataArr);
+				//System.out.println(0 + " " + next);
 				break;
 			}
-		}*/
+		}
 	}
 
 	// 다익스트라 알고리즘의 결과값을 받아 중간역 관련 데이터를 계산 & 출력하는 클래스
@@ -205,11 +208,13 @@ public class ResultControler
 	}
 
 	// 노선 관련 데이터 출력
-	public void printData(int startIdx, int endIdx, int[][] dataArr)
+	public String printData(int startIdx, int endIdx, int[][] dataArr)
 	{
 		int time = 0;
 		int dist = 0;
 		int cost = 0;
+
+		String result = "";
 
 		for (int i = startIdx; i < endIdx; i++)
 		{
@@ -218,11 +223,12 @@ public class ResultControler
 			cost += dataArr[3][i];
 		}
 
-		System.out.println();
+		/*System.out.println();
 		System.out.println("총 시간 : " + time);
 		System.out.println("총 거리 : " + dist);
 		System.out.println("총 비용 : " + cost);
-		System.out.println();
+		System.out.println();*/
+		return result = result + time + "(초!)";
 	}
 
 	public int getTimeData(int startIdx, int endIdx, int[][] dataArr)

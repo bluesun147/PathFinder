@@ -24,14 +24,17 @@ public class ResultActivity extends AppCompatActivity {
     String recommRoute; // 추천 경로-경로-경로
     int recommRoutelength; // 추천 시간의 거리
     String recommRouteCost; // 시간, 비용
+    String recommAlarmTime; // 알람 시간
 
     String timeRoute; // 최단시간 경로
     int timeRoutelength; // 최단 시간의 거리
     String timeRouteCost; // 시간, 비용
+    String timeAlarmTime;
 
     String moneyRoute; // 최소비용 경로
     int moneyRoutelength; // 최소 비용의 거리
     String moneyRouteCost; // 시간, 비용
+    String moneyAlarmTime;
 
 
     @RequiresApi(api = Build.VERSION_CODES.N)
@@ -79,6 +82,7 @@ public class ResultActivity extends AppCompatActivity {
             recommRoute = d.DijkstraAlgorithmFull(startstation, endstation)[2];
             recommRoutelength = d.DijkstraAlgorithmFull2(startstation, endstation)[2][1];
             printRecommRoute.setText(recommRoute);
+            recommAlarmTime = d.DijkstraAlgorithmFull3(startstation, endstation)[2]; /////////////////////////////
 
             recommRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][0] + "초, 소요 비용 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][2] + "원";
             // 소요 시간, 비용
@@ -88,6 +92,7 @@ public class ResultActivity extends AppCompatActivity {
             timeRoute = d.DijkstraAlgorithmFull(startstation, endstation)[0];
             timeRoutelength = d.DijkstraAlgorithmFull2(startstation, endstation)[0][1];
             printTimeRoute.setText(timeRoute);
+            timeAlarmTime = d.DijkstraAlgorithmFull3(startstation, endstation)[0]; /////////////////////////////
 
             timeRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[0][0] + "초, 소요 비용 "+d.DijkstraAlgorithmFull2(startstation, endstation)[0][2] + "원";
             // 소요 시간, 비용
@@ -97,6 +102,7 @@ public class ResultActivity extends AppCompatActivity {
             moneyRoute = d.DijkstraAlgorithmFull(startstation, endstation)[1];
             moneyRoutelength = d.DijkstraAlgorithmFull2(startstation, endstation)[1][1];
             printMoneyRoute.setText(moneyRoute);
+            moneyAlarmTime = d.DijkstraAlgorithmFull3(startstation, endstation)[1]; /////////////////////////////
 
             moneyRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[1][0] + "초, 소요 비용 "+d.DijkstraAlgorithmFull2(startstation, endstation)[1][2] + "원";
             // 소요 시간, 비용
@@ -136,6 +142,7 @@ public class ResultActivity extends AppCompatActivity {
                         intent.putExtra("route", recommRoute);
                         intent.putExtra("routeLength", recommRoutelength);
                         intent.putExtra("cost", recommRouteCost);
+                        intent.putExtra("alarmTime", recommAlarmTime);
                         Toast.makeText(getApplicationContext(), "추천 경로 선택", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.time_route:
@@ -143,6 +150,7 @@ public class ResultActivity extends AppCompatActivity {
                         intent.putExtra("route", timeRoute);
                         intent.putExtra("routeLength", timeRoutelength);
                         intent.putExtra("cost", timeRouteCost);
+                        intent.putExtra("alarmTime", timeAlarmTime);
                         Toast.makeText(getApplicationContext(), "최소 시간 경로 선택", Toast.LENGTH_SHORT).show();
                         break;
                     case R.id.money_route:
@@ -150,6 +158,7 @@ public class ResultActivity extends AppCompatActivity {
                         intent.putExtra("route", moneyRoute);
                         intent.putExtra("routeLength", moneyRoutelength);
                         intent.putExtra("cost", moneyRouteCost);
+                        intent.putExtra("alarmTime", moneyAlarmTime);
                         Toast.makeText(getApplicationContext(), "최소 비용 경로 선택", Toast.LENGTH_SHORT).show();
                         break;
                 }

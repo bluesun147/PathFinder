@@ -29,16 +29,17 @@ public class Dijkstra extends ResultControler
 	{ // 경로-경로(lineStrArr) 문자열 배열 반환
 		String[] lineStrArr = new String[3];
 		int[][] dataDarr = new int[3][3];
+		String[] alarmCount = new String[3];
 
 		for(int i = 0; i < 3; i++)
 		{
 			if (i != 2)
 			{
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i);
+				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i, alarmCount);
 			}
 			else
 			{
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i+1), lineStrArr, dataDarr, i);
+				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i+1), lineStrArr, dataDarr, i, alarmCount);
 			}
 		}
 
@@ -50,20 +51,43 @@ public class Dijkstra extends ResultControler
 	{ // 각 경로의 시간, 거리, 비용 반환. int[][] 반환
 		String[] lineStrArr = new String[3];
 		int[][] dataDarr = new int[3][3];
+		String[] alarmCount = new String[3];
 
 		for(int i = 0; i < 3; i++)
 		{
 			if (i != 2)
 			{
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i);
+				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i, alarmCount);
 			}
 			else
 			{
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i+1), lineStrArr, dataDarr, i);
+				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i+1), lineStrArr, dataDarr, i, alarmCount);
 			}
 		}
 
 		return dataDarr;
+	}
+
+	@RequiresApi(api = Build.VERSION_CODES.N)
+	public String[] DijkstraAlgorithmFull3(int startStn, int endStn) throws IOException
+	{ // 각 경로의 시간, 거리, 비용 반환. int[][] 반환
+		String[] lineStrArr = new String[3];
+		int[][] dataDarr = new int[3][3];
+		String[] alarmCount = new String[3];
+
+		for(int i = 0; i < 3; i++)
+		{
+			if (i != 2)
+			{
+				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i, alarmCount);
+			}
+			else
+			{
+				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i+1), lineStrArr, dataDarr, i, alarmCount);
+			}
+		}
+
+		return alarmCount;
 	}
 
 

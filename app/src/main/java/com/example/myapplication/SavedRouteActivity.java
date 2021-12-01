@@ -44,6 +44,8 @@ public class SavedRouteActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.savedroute_page);
 
+        ImageView goback = findViewById(R.id.goback); // 뒤로가기 버튼
+
         dbHelper = new DBHelper(this, dbName, null, dbVersion);
         db = dbHelper.getWritableDatabase();
 
@@ -79,11 +81,6 @@ public class SavedRouteActivity extends AppCompatActivity {
 
                 Intent intent = getIntent(); /////////////////////////////////////////////////////////////////////////////
 
-
-
-
-
-
                 com.example.myapplication.sampleData.b = intent.getExtras().getString("route"); // 경로추가 버튼 누르면 입력한 값을 추가
 
                 if (Datas.isEmpty()) { //Datas 리스트가 비어있을 때 만약 비어있다면 값을 추가하고 list와 listview연결
@@ -105,5 +102,12 @@ public class SavedRouteActivity extends AppCompatActivity {
             }
         };
         add.setOnClickListener(buttonListener);
+
+        goback.setOnClickListener(new View.OnClickListener() { // 메뉴 눌렀을 시 메뉴 페이지로 이동
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), MenuActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 }

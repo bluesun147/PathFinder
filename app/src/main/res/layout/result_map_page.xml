@@ -27,6 +27,32 @@
         android:layout_marginRight="9dp"
         android:src="@drawable/goback" />
 
+    <TextView
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="125dp"
+        android:layout_marginRight="125dp"
+        android:textStyle="bold"
+        android:text="도착역: " />
+
+    <TextView
+        android:id="@+id/start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="266dp"
+        android:layout_marginRight="266dp"
+        android:textStyle="bold"
+        android:text="출발역: " />
+
     <ImageView
         android:id="@+id/save"
         android:layout_width="wrap_content"
@@ -77,31 +103,7 @@
         android:layout_marginBottom="-23dp"
         android:text="알람" />
 
-    <TextView
-        android:id="@+id/end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="125dp"
-        android:layout_marginRight="125dp"
-        android:textStyle="bold"
-        android:text="도착역: " />
 
-    <TextView
-        android:id="@+id/start"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="69dp"
-        android:layout_marginEnd="266dp"
-        android:layout_marginRight="266dp"
-        android:textStyle="bold"
-        android:text="출발역: " />
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/map"
