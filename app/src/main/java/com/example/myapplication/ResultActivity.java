@@ -73,10 +73,10 @@ public class ResultActivity extends AppCompatActivity {
             int startstation = DataChange.stnToNum(Integer.parseInt(startStation));
             int endstation = DataChange.stnToNum(Integer.parseInt(endStation));
 
-            recommRoute = d.DijkstraAlgorithmFull(startstation, endstation)[0];
+            recommRoute = d.DijkstraAlgorithmFull(startstation, endstation)[2];
             printRecommRoute.setText(recommRoute);
 
-            recommRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[0][0] + "분, 소요 비용 "+d.DijkstraAlgorithmFull2(startstation, endstation)[0][2] + "원";
+            recommRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][0] + "초, 소요 비용 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][2] + "원";
             // 소요 시간, 비용
             recommCosts.setText(recommRouteCost);
 
@@ -84,15 +84,15 @@ public class ResultActivity extends AppCompatActivity {
             timeRoute = d.DijkstraAlgorithmFull(startstation, endstation)[1];
             printTimeRoute.setText(timeRoute);
 
-            timeRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[1][0] + "분, 소요 비용 "+d.DijkstraAlgorithmFull2(startstation, endstation)[1][2] + "원";
+            timeRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[0][0] + "초, 소요 비용 "+d.DijkstraAlgorithmFull2(startstation, endstation)[0][2] + "원";
             // 소요 시간, 비용
             timeCosts.setText(timeRouteCost);
 
             // 최소비용은 인덱스[2]
-            moneyRoute = d.DijkstraAlgorithmFull(startstation, endstation)[0];
+            moneyRoute = d.DijkstraAlgorithmFull(startstation, endstation)[1];
             printMoneyRoute.setText(moneyRoute);
 
-            moneyRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][0] + "분, 소요 비용 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][2] + "원";
+            moneyRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[1][0] + "초, 소요 비용 "+d.DijkstraAlgorithmFull2(startstation, endstation)[1][2] + "원";
             // 소요 시간, 비용
             moneyCosts.setText(moneyRouteCost);
         }

@@ -1,6 +1,9 @@
 package com.example.myapplication;
 
 import android.app.Activity;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -39,6 +42,7 @@ public class Graph extends Activity
 	// 인접리스트 그래프를 생성하여 반환하는 메소드
 	// 반환값
 	// graph : 인접리스트 그래프
+	@RequiresApi(api = Build.VERSION_CODES.O)
 	static public List<ArrayList<Node>> graph() throws IOException
 	{
 		DataChange d1 = new DataChange();

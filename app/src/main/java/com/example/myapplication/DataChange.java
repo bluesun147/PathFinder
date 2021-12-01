@@ -1,14 +1,14 @@
 package com.example.myapplication;
 
-import android.app.Activity;
-import android.os.Environment;
-import android.widget.Toast;
 
-import com.opencsv.CSVReader;
+import android.app.Activity;
+import android.content.res.AssetManager;
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -19,7 +19,7 @@ import java.util.Arrays;
 import java.util.List;
 
 // 데이터 변환을 담당하는 클래스
-public class DataChange
+public class DataChange extends Activity
 {
 
 	static List<List<String>> ret = new ArrayList<List<String>>();
@@ -27,8 +27,26 @@ public class DataChange
 	// 엑셀 파일로부터 데이터를 가져오는 메소드
 	// 반환값
 	// ret : 엑셀 파일로부터 가져온 데이터를 저장하는 리스트
-	public static List<List<String>> func() throws IOException
-	{
+	@RequiresApi(api = Build.VERSION_CODES.O)
+	public List<List<String>> func() throws IOException {
+
+		/*AssetManager am = getResources().getAssets();
+		InputStream is = null ;
+		is = am.open("stations.csv") ;
+		BufferedReader br = null;
+		br = new BufferedReader(new InputStreamReader(is));
+		String line = "";
+
+		while ((line = br.readLine()) != null)
+		{
+			List <String> tmpList = new ArrayList<String>();
+			String array[] = line.split(",");
+			tmpList = Arrays.asList(array);
+			// System.out.println(tmpList);
+			ret.add(tmpList);
+		}*/
+
+
 		/*try {
 			CSVReader reader = new CSVReader(new FileReader("stations.csv"));
 			String[] line;
@@ -42,25 +60,9 @@ public class DataChange
 				i++;
 			}
 		} catch (IOException e) {
-
 		}
 		return ret;*/
 
-
-		/*BufferedReader br = null;
-		br = Files.newBufferedReader(Paths.get("C:\\Users\\blues\\OneDrive\\바탕화~1-DESKTOP-9RO8JPH-8531-DESKTOP-9RO8JPH\\팀프로젝트1\\1123\\stations.csv"));
-		String line = "";
-
-		while ((line = br.readLine()) != null)
-		{
-			List <String> tmpList = new ArrayList<String>();
-			String array[] = line.split(",");
-			tmpList = Arrays.asList(array);
-			// System.out.println(tmpList);
-			ret.add(tmpList);
-		}
-		return ret;
-	}*/
 		ArrayList<String> data1 = new ArrayList<>();
 		ArrayList<String> data2 = new ArrayList<>();
 		ArrayList<String> data3 = new ArrayList<>();
@@ -461,7 +463,6 @@ public class DataChange
 		ret.add(data118);
 		ret.add(data119);
 		ret.add(data120);
-
 		ret.add(data121);
 		ret.add(data122);
 		ret.add(data123);
@@ -472,7 +473,6 @@ public class DataChange
 		ret.add(data128);
 		ret.add(data129);
 		ret.add(data130);
-
 		ret.add(data131);
 		ret.add(data132);
 		ret.add(data133);
@@ -482,7 +482,6 @@ public class DataChange
 		ret.add(data137);
 		ret.add(data138);
 		ret.add(data139);
-
 		return ret;
 	}
 

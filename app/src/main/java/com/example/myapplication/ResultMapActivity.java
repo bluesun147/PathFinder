@@ -57,14 +57,14 @@ public class ResultMapActivity extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "경로오류", Toast.LENGTH_LONG).show();
         }
 
-        save.setOnClickListener(new View.OnClickListener() { // 경로 저장 버튼 누르면
+        /*save.setOnClickListener(new View.OnClickListener() { // 경로 저장 버튼 누르면
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "경로가 저장되었습니다.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(getApplicationContext(), SavedRouteActivity.class);
                 intent.putExtra("route", routeqq);
                 startActivity(intent);
             }
-        });
+        });*/
 
         bell.setOnClickListener(new View.OnClickListener() { // 알람 버튼 누르면
             public void onClick(View view) {

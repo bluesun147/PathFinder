@@ -66,6 +66,9 @@ public class Dijkstra extends ResultControler
 		return dataDarr;
 	}
 
+
+	//return 중간역 관련 값;
+
 	// 다익스트라 알고리즘
 	@RequiresApi(api = Build.VERSION_CODES.N)
 	public int[] DijkstraAlgorithm(int startStn, int endStn, int costIndex) throws IOException
