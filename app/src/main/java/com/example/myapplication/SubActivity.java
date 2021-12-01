@@ -43,7 +43,8 @@ public class SubActivity extends AppCompatActivity {
 
         Button otherApp = findViewById(R.id.otherApp); // 다른 앱 테스트
 
-        otherApp.setOnClickListener(new View.OnClickListener() { // 다른 앱 열기 클릭 시
+        otherApp.setOnClickListener(new View.OnClickListener()
+        { // 다른 앱 열기 클릭 시
 
             public boolean getPackageList() { // 앱 설치 되어있는지 확인하는 메서드
                 boolean isExist = false;

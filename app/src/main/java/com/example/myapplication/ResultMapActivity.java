@@ -1,8 +1,12 @@
 package com.example.myapplication;
 
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -17,8 +21,30 @@ import java.util.List;
 
 public class ResultMapActivity extends AppCompatActivity {
     // 결과 경로 3개 보여주는 화면. 노선 보여주기 이전 화면
-    @RequiresApi(api = Build.VERSION_CODES.N)
-    @Override
+
+    public boolean getPackageList() { // 앱 설치 되어있는지 확인하는 메서드
+        boolean isExist = false;
+
+        PackageManager pkgMgr = getPackageManager();
+        List<ResolveInfo> mApps;
+        Intent mainIntent = new Intent(Intent.ACTION_MAIN, null);
+        mainIntent.addCategory(Intent.CATEGORY_LAUNCHER);
+        mApps = pkgMgr.queryIntentActivities(mainIntent, 0);
+
+        try {
+            for (int i = 0; i < mApps.size(); i++) {
+                if(mApps.get(i).activityInfo.packageName.startsWith("com.dki.spb_android")){ // 따릉이 앱
+                    isExist = true;
+                    break;
+                }
+            }
+        }
+        catch (Exception e) {
+            isExist = false;
+        }
+        return isExist;
+    }
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_map_page);
@@ -44,6 +70,11 @@ public class ResultMapActivity extends AppCompatActivity {
         String routeqq = intent.getExtras().getString("route");
         String costqq = intent.getExtras().getString("cost");
 
+        int lengthqq = intent.getExtras().getInt("routeLength");
+
+
+
+
         try {
             List<ArrayList<Graph.Node>> graph = Graph.graph();
             Dijkstra d = new Dijkstra(111, 139, graph);
@@ -51,11 +82,60 @@ public class ResultMapActivity extends AppCompatActivity {
             route.setText(routeqq);
             // 소요 시간, 비용
             cost.setText(costqq);
+
+            if (lengthqq < 1500) /////////////
+            {
+                Toast.makeText(getApplicationContext(), "짧은 거리는 따릉이를 이용하세요!", Toast.LENGTH_SHORT).show();
+
+                Handler handler = new Handler();
+                handler.postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        if (getPackageList() == true)
+                        { // 설치 되어 있으면 앱 열기
+                            // https://www.fun25.co.kr/blog/android-execute-3rdparty-app/?category=003
+                            //Intent intent = getPackageManager().getLaunchIntentForPackage("com.google.android.apps.maps");
+                            Intent intent = getPackageManager().getLaunchIntentForPackage("com.dki.spb_android");
+                            // com.android.chrome
+                            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                            startActivity(intent);
+                        }
+
+                        else { // 설치 안 되어 있다면 플레이 스토어로
+                            String url = "market://details?id=" + "com.dki.spb_android";
+                            Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                            startActivity(i);
+                        }
+                    }
+                }, 3000); //딜레이 타임 조절
+
+                /*if (getPackageList() == true)
+                { // 설치 되어 있으면 앱 열기
+                    // https://www.fun25.co.kr/blog/android-execute-3rdparty-app/?category=003
+                    //Intent intent = getPackageManager().getLaunchIntentForPackage("com.google.android.apps.maps");
+                    intent = getPackageManager().getLaunchIntentForPackage("com.dki.spb_android");
+                    // com.android.chrome
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    startActivity(intent);
+                }
+
+                else { // 설치 안 되어 있다면 플레이 스토어로
+                    String url = "market://details?id=" + "com.dki.spb_android";
+                    Intent i = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
+                    startActivity(i);
+                }*/
+            }
+            else
+            {
+
+            }
         }
         catch (IOException e) {
             route.setText(e.toString());
             Toast.makeText(getApplicationContext(), "경로오류", Toast.LENGTH_LONG).show();
         }
+
+
 
         save.setOnClickListener(new View.OnClickListener() { // 경로 저장 버튼 누르면
             public void onClick(View view) {
