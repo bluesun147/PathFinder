@@ -27,7 +27,6 @@ import java.util.ArrayList;
     }
 }*/
 
-// 저장 노선
 public class SavedRouteActivity extends AppCompatActivity {
     sampleData sampleData = new sampleData(); //임시로 스트링 받기 위한 변
     String dbName = "history.db";
@@ -71,6 +70,10 @@ public class SavedRouteActivity extends AppCompatActivity {
             Adapter= new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,Datas);
             ListView.setAdapter(Adapter);
         }
+
+        Intent intent = getIntent(); /////////////////////////////////////////////////////////////////////////////
+        //add.setText(intent.getExtras().getString("route")); // MainActivity에서 입력한 값을 버튼 텍스트로 설정
+        com.example.myapplication.sampleData.b = intent.getExtras().getString("route"); // 경로추가 버튼 누르면 입력한 값을 추가
 
         View.OnClickListener buttonListener = new View.OnClickListener() {
             @Override
