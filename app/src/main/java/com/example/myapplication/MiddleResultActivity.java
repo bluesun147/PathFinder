@@ -81,12 +81,12 @@ public class MiddleResultActivity extends AppCompatActivity {
             myAlarmTime = d.DijkstraAlgorithmFull3(mystation, yourstation)[2]; // ==> 이상해
             //myAlarmTime = d.DijkstraAlgorithmFull3(mystation, Integer.parseInt(myRouteArr[myRouteArr.length-1]))[2];
 
-
             //myRouteCost = "소요 시간 "+d.DijkstraMeetUpMyData(mystation, yourstation)[2][0] + "초, 소요 비용 "+d.DijkstraMeetUpMyData(mystation, yourstation)[2][2] + "원";
             myRouteCost = "소요 시간 "+d.DijkstraMeetUpMyData(mystation, yourstation)[2][0] / 60 + "분" + d.DijkstraMeetUpMyData(mystation, yourstation)[2][0] % 60 + "초, "+ "소요 비용 "+d.DijkstraMeetUpMyData(mystation, yourstation)[2][2] + "원";
 
             // 소요 시간, 비용
-            myCosts.setText(myRouteCost);
+            //myCosts.setText(myRouteCost);
+
 
             //나//////////////////////////////////////////////////상대//
 
@@ -102,9 +102,10 @@ public class MiddleResultActivity extends AppCompatActivity {
 
             //yourRouteCost = "소요 시간 "+d.DijkstraMeetUpYourData(mystation, yourstation)[2][0] + "초, 소요 비용 "+d.DijkstraMeetUpYourData(mystation,yourstation)[2][2] + "원";
             yourRouteCost = "소요 시간 "+d.DijkstraMeetUpYourData(mystation, yourstation)[2][0] / 60 + "분" + d.DijkstraMeetUpYourData(mystation, yourstation)[2][0] % 60 + "초, "+ "소요 비용 "+d.DijkstraMeetUpYourData(mystation, yourstation)[2][2] + "원";
-
+            myCosts.setText(yourRouteCost);
             // 소요 시간, 비용
-            yourCosts.setText(yourRouteCost);
+            //yourCosts.setText(yourRouteCost);
+            yourCosts.setText(myRouteCost);
         }
         catch (IOException e) { // 오류
             Toast.makeText(getApplicationContext(), "오류", Toast.LENGTH_LONG).show();
@@ -150,7 +151,7 @@ public class MiddleResultActivity extends AppCompatActivity {
                     case R.id.my_route:
                         intent.putExtra("route", myRoute);
                         intent.putExtra("routeLength", myRoutelength);
-                        intent.putExtra("cost", myRouteCost);
+                        intent.putExtra("cost", yourRouteCost);
                         intent.putExtra("alarmTime", myAlarmTime);
                         Toast.makeText(getApplicationContext(), "나의 경로 선택", Toast.LENGTH_SHORT).show();
                         break;
@@ -158,7 +159,7 @@ public class MiddleResultActivity extends AppCompatActivity {
                         flag = 1;
                         intent.putExtra("route", yourRoute);
                         intent.putExtra("routeLength", yourRoutelength);
-                        intent.putExtra("cost", yourRouteCost);
+                        intent.putExtra("cost", myRouteCost);
                         intent.putExtra("alarmTime", yourAlarmTime);
                         Toast.makeText(getApplicationContext(), "상대 경로 선택", Toast.LENGTH_SHORT).show();
                         break;

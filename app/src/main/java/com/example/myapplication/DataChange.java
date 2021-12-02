@@ -36,7 +36,6 @@ public class DataChange extends Activity
 		BufferedReader br = null;
 		br = new BufferedReader(new InputStreamReader(is));
 		String line = "";
-
 		while ((line = br.readLine()) != null)
 		{
 			List <String> tmpList = new ArrayList<String>();

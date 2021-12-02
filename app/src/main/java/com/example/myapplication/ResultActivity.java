@@ -97,7 +97,7 @@ public class ResultActivity extends AppCompatActivity {
             printTimeRoute.setText(timeRoute);
             timeAlarmTime = d.DijkstraAlgorithmFull3(startstation, endstation)[0]; /////////////////////////////
 
-            timeRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[0][0] / 60 + "분" +d.DijkstraAlgorithmFull2(startstation, endstation)[2][0] % 60 + "초, "+ "소요 비용 " +d.DijkstraAlgorithmFull2(startstation, endstation)[0][2] + "원";
+            timeRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[0][0] / 60 + "분" +d.DijkstraAlgorithmFull2(startstation, endstation)[0][0] % 60 + "초, "+ "소요 비용 " +d.DijkstraAlgorithmFull2(startstation, endstation)[0][2] + "원";
             // 소요 시간, 비용
             timeCosts.setText(timeRouteCost);
 
@@ -107,7 +107,7 @@ public class ResultActivity extends AppCompatActivity {
             printMoneyRoute.setText(moneyRoute);
             moneyAlarmTime = d.DijkstraAlgorithmFull3(startstation, endstation)[1]; /////////////////////////////
 
-            moneyRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][0] / 60 + "분 " +d.DijkstraAlgorithmFull2(startstation, endstation)[1][0] % 60 + "초, "+ "소요 비용 " +d.DijkstraAlgorithmFull2(startstation, endstation)[1][2] + "원";
+            moneyRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[1][0] / 60 + "분 " +d.DijkstraAlgorithmFull2(startstation, endstation)[1][0] % 60 + "초, "+ "소요 비용 " +d.DijkstraAlgorithmFull2(startstation, endstation)[1][2] + "원";
             // 소요 시간, 비용
             moneyCosts.setText(moneyRouteCost);
         }

@@ -44,8 +44,8 @@
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/map"
-        android:layout_width="443dp"
-        android:layout_height="571dp"
+        android:layout_width="421dp"
+        android:layout_height="568dp"
         android:src="@drawable/mapjpg"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
