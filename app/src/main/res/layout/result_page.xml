@@ -98,7 +98,7 @@
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/time_route"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="333dp"
+        android:layout_marginBottom="324dp"
         android:text="경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로"
         android:textStyle="bold" />
 

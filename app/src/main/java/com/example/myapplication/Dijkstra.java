@@ -33,7 +33,7 @@ public class Dijkstra extends ResultControler
 
 		for(int i = 0; i < 3; i++)
 		{
-			if (i != 2)
+			if (i != 1)
 			{
 				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i, alarmCount);
 			}
@@ -55,7 +55,7 @@ public class Dijkstra extends ResultControler
 
 		for(int i = 0; i < 3; i++)
 		{
-			if (i != 2)
+			if (i != 1)
 			{
 				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i, alarmCount);
 			}
@@ -77,7 +77,7 @@ public class Dijkstra extends ResultControler
 
 		for(int i = 0; i < 3; i++)
 		{
-			if (i != 2)
+			if (i != 1)
 			{
 				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i, alarmCount);
 			}

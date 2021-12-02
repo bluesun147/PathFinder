@@ -17,16 +17,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-
-/*public class SavedRouteActivity extends AppCompatActivity {
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.savedroute_page);
-    }
-}*/
-
 public class SavedRouteActivity extends AppCompatActivity {
     sampleData sampleData = new sampleData(); //임시로 스트링 받기 위한 변
     String dbName = "history.db";
