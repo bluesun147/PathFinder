@@ -94,18 +94,6 @@ public class ResultMapActivity extends AppCompatActivity {
         String alarmqq = intent.getExtras().getString("alarmTime"); // 알람 시간 스트링. split으로 배열로 만들어서
         String[] alarmArr = alarmqq.split("@"); // for(Integer.parseInt(arr[i])) 마다 알람 울리게.
 
-
-
-        TextView test = findViewById(R.id.test);
-        test.setText(alarmqq);
-
-        TextView test2 = findViewById(R.id.test2);
-        test2.setText(Integer.toString(Integer.parseInt(alarmArr[0])*1000 - 60000));
-
-
-
-
-
         Handler handler = new Handler();
 
         try {
