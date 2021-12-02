@@ -58,9 +58,6 @@ public class SearchActivity extends AppCompatActivity
             }
         });
 
-        // 중간역에서 넘어왔을 시 출발역, 도착역 대신 "나, 상대의 역을 입력하세요" 로 바꿔야 함?
-
-
         goback.setOnClickListener(new View.OnClickListener() { // 뒤로가기
             public void onClick(View view) {
                 //Toast.makeText(getApplicationContext(), "뒤로가기!", Toast.LENGTH_SHORT).show();

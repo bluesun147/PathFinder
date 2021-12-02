@@ -90,8 +90,87 @@ public class Dijkstra extends ResultControler
 		return alarmCount;
 	}
 
+	@RequiresApi(api = Build.VERSION_CODES.N)
+	public String[] DijkstraMeetUpMyStr(int startStn, int endStn) throws IOException
+	{
+		String[] lineStrArr = new String[3];
+		int[][] dataDarr = new int[3][3];
 
-	//return 중간역 관련 값;
+		for(int i = 0; i < 3; i++)
+		{
+			if (i != 1)
+			{
+				super.meetUpStationMe(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i);
+			}
+			else
+			{
+				super.meetUpStationMe(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i+1), lineStrArr, dataDarr, i);
+			}
+		}
+		return lineStrArr;
+	}
+	@RequiresApi(api = Build.VERSION_CODES.N)
+	public int[][] DijkstraMeetUpMyData(int startStn, int endStn) throws IOException
+	{
+		String[] lineStrArr = new String[3];
+		int[][] dataDarr = new int[3][3];
+
+		for(int i = 0; i < 3; i++)
+		{
+			if (i != 1)
+			{
+				super.meetUpStationMe(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i);
+			}
+			else
+			{
+				super.meetUpStationMe(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i+1), lineStrArr, dataDarr, i);
+			}
+		}
+
+		return dataDarr;
+	}
+
+	@RequiresApi(api = Build.VERSION_CODES.N)
+	public String[] DijkstraMeetUpYourStr(int startStn, int endStn) throws IOException
+	{
+		String[] lineStrArr = new String[3];
+		int[][] dataDarr = new int[3][3];
+
+		for(int i = 0; i < 3; i++)
+		{
+			if (i != 1)
+			{
+				super.meetUpStationYou(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i);
+			}
+			else
+			{
+				super.meetUpStationYou(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i+1), lineStrArr, dataDarr, i);
+			}
+		}
+
+		return lineStrArr;
+	}
+
+	@RequiresApi(api = Build.VERSION_CODES.N)
+	public int[][] DijkstraMeetUpYourData(int startStn, int endStn) throws IOException
+	{
+		String[] lineStrArr = new String[3];
+		int[][] dataDarr = new int[3][3];
+
+		for(int i = 0; i < 3; i++)
+		{
+			if (i != 1)
+			{
+				super.meetUpStationYou(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i), lineStrArr, dataDarr, i);
+			}
+			else
+			{
+				super.meetUpStationYou(startStn, endStn, DijkstraAlgorithm(startStn, endStn, i+1), lineStrArr, dataDarr, i);
+			}
+		}
+
+		return dataDarr;
+	}
 
 	// 다익스트라 알고리즘
 	@RequiresApi(api = Build.VERSION_CODES.N)

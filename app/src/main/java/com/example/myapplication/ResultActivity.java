@@ -69,13 +69,14 @@ public class ResultActivity extends AppCompatActivity {
         String endStation = intent.getExtras().getString("end"); // 입력한 도착 역
         end.setText("도착역: " + endStation);
 
-        try {
+        try
+        {
             List<ArrayList<Node>> graph = Graph.graph();
             Dijkstra d = new Dijkstra(111, 139, graph);
             // 입력한 출발역과 도착역으로 (문자열이기 때문에 정수로 변환)
             // 그에 맞는 경로 보여줌
 
-            // 추천경로는 인덱스[0]
+            // 추천경로는 인덱스[2]
             int startstation = DataChange.stnToNum(Integer.parseInt(startStation));
             int endstation = DataChange.stnToNum(Integer.parseInt(endStation));
 
@@ -88,7 +89,7 @@ public class ResultActivity extends AppCompatActivity {
             // 소요 시간, 비용
             recommCosts.setText(recommRouteCost);
 
-            // 최단시간은 인덱스[1]
+            // 최단시간은 인덱스[0]
             timeRoute = d.DijkstraAlgorithmFull(startstation, endstation)[0];
             timeRoutelength = d.DijkstraAlgorithmFull2(startstation, endstation)[0][1];
             printTimeRoute.setText(timeRoute);
@@ -98,7 +99,7 @@ public class ResultActivity extends AppCompatActivity {
             // 소요 시간, 비용
             timeCosts.setText(timeRouteCost);
 
-            // 최소비용은 인덱스[2]
+            // 최소비용은 인덱스[1]
             moneyRoute = d.DijkstraAlgorithmFull(startstation, endstation)[1];
             moneyRoutelength = d.DijkstraAlgorithmFull2(startstation, endstation)[1][1];
             printMoneyRoute.setText(moneyRoute);
@@ -112,26 +113,6 @@ public class ResultActivity extends AppCompatActivity {
             printRecommRoute.setText(e.toString());
             Toast.makeText(getApplicationContext(), "경로오류", Toast.LENGTH_LONG).show();
         }
-
-        // 여기서 추천 경로, 최단 시간, 최소 비용 세개 중 누른 것에 해당하는 결과 갖고 가야 함.
-
-        /*recomm_route.setOnClickListener(new View.OnClickListener() { // 추천 경로 선택할 시
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ResultMapActivity.class);
-                intent.putExtra("route", recommRoute);
-                intent.putExtra("cost", recommRouteCost);
-
-                button.setOnClickListener(new View.OnClickListener() { // 경로 선택하고 경로 확인 누르면 경로 보여줌
-                    public void onClick(View view) {
-
-                        intent.putExtra("start", startStation);
-                        intent.putExtra("end", endStation);
-                        startActivity(intent);
-                    }
-                });
-            }
-        });*/
 
         TextView.OnClickListener onClickListener = new TextView.OnClickListener() {
             public void onClick(View v) {
@@ -175,9 +156,5 @@ public class ResultActivity extends AppCompatActivity {
         recomm_route.setOnClickListener(onClickListener);
         time_route.setOnClickListener(onClickListener);
         money_route.setOnClickListener(onClickListener);
-
-
-
-
     }
 }

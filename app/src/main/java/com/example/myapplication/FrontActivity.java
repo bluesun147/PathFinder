@@ -30,8 +30,6 @@ public class FrontActivity extends AppCompatActivity {
 
         ImageButton button = findViewById(R.id.button);
 
-        TextView test = findViewById(R.id.test);
-
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View view) {
 
@@ -39,22 +37,5 @@ public class FrontActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-        Handler handler = new Handler() {
-            public void handleMessage (Message msg) {
-                seconds += 1;
-                test.setText("시간: " + seconds);
-            }
-        };
-
-        Timer timer = new Timer();
-        TimerTask func = new TimerTask() {
-            public void run() {
-                Message msg = handler.obtainMessage();
-                handler.sendMessage(msg);
-            }
-        };
-
-        timer.schedule(func, 0, 1000);
-
     }
 }

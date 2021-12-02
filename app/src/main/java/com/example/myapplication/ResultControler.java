@@ -88,6 +88,30 @@ public class ResultControler
 		printData(myIdx, count, dataArr);
 	}
 
+	public void meetUpStationMe(int startStn, int endStn, int[] stnList, String[] lineStrArr, int[][] dataDarr, int index)
+	{
+		int[][] dataArr = makeDataArr(endStn, stnList);
+		int count = getCount(dataArr);
+		int myIdx = findMiddleIndex(count, dataArr);
+
+		lineStrArr[index] = getPrintStation(count, myIdx, dataArr);
+		dataDarr[index][0] = getTimeData(0, myIdx, dataArr);
+		dataDarr[index][1] = getDistData(0, myIdx, dataArr);
+		dataDarr[index][2] = getCostData(0, myIdx, dataArr);
+	}
+
+	public void meetUpStationYou(int startStn, int endStn, int[] stnList, String[] lineStrArr, int[][] dataDarr, int index)
+	{
+		int[][] dataArr = makeDataArr(endStn, stnList);
+		int count = getCount(dataArr);
+		int myIdx = findMiddleIndex(count, dataArr);
+
+		lineStrArr[index] = getPrintStationR(0, myIdx, dataArr);
+		dataDarr[index][0] = getTimeData(myIdx, count, dataArr);
+		dataDarr[index][1] = getDistData(myIdx, count, dataArr);
+		dataDarr[index][2] = getCostData(myIdx, count, dataArr);
+	}
+
 	// 입력받은 시작 역과 종착 역에 대응하는 간선을 반환
 	public int findMainLine(int startStn, int endStn)
 	{
@@ -186,6 +210,24 @@ public class ResultControler
 				System.out.print(" > ");
 			}
 		}
+	}
+
+	public String getPrintStationR(int startIdx, int endIdx, int[][] dataArr)
+	{
+		String result = "";
+		for (int i = startIdx; i < endIdx + 1; i++)
+		{
+			result += (DataChange.numToStn(dataArr[0][i]));
+			if (i != endIdx)
+			{
+				if (dataArr[4][i] != dataArr[4][i+1])
+				{
+					result += "(환승)";
+				}
+				result += " > ";
+			}
+		}
+		return result;
 	}
 
 	public int[] findTransferStation(int startIdx, int endIdx, int[][] dataArr)

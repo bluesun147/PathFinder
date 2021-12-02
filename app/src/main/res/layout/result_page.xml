@@ -15,16 +15,17 @@
         android:src="@drawable/twocircle" />
 
     <TextView
-        android:id="@+id/end"
+        android:id="@+id/selectYourRoute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="83dp"
-        android:layout_marginEnd="121dp"
-        android:layout_marginRight="121dp"
-        android:text="도착역: "
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="117dp"
+        android:layout_marginRight="117dp"
+        android:layout_marginBottom="674dp"
+        android:text="원하는 경로를 선택하세요."
+        android:textSize="17dp"
         android:textStyle="bold" />
 
     <TextView
@@ -41,17 +42,16 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/selectYourRoute"
+        android:id="@+id/end"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginEnd="117dp"
-        android:layout_marginRight="117dp"
-        android:layout_marginBottom="674dp"
-        android:text="원하는 경로를 선택하세요."
-        android:textSize="17dp"
+        android:layout_marginTop="83dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginRight="121dp"
+        android:text="도착역: "
         android:textStyle="bold" />
 
     <TextView

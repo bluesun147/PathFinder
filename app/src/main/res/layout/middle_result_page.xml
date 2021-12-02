@@ -6,8 +6,26 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".FrontActivity">
-
     <!-- MiddleResultActivity -->
+
+
+    <TextView
+        android:id="@+id/recommending_station"
+        android:layout_width="225dp"
+        android:layout_height="97dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="106dp"
+        android:layout_marginLeft="106dp"
+        android:layout_marginEnd="91dp"
+        android:layout_marginRight="91dp"
+        android:layout_marginBottom="548dp"
+        android:text="추천 중간역 🚇"
+        android:textSize="30dp"
+        android:textStyle="bold" />
 
     <ImageView
         android:id="@+id/circle"
@@ -22,10 +40,11 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="171dp"
-        android:layout_marginRight="171dp"
-        android:text="나의 역: " />
+        android:layout_marginTop="58dp"
+        android:layout_marginEnd="261dp"
+        android:layout_marginRight="261dp"
+        android:text="나의 역: "
+        android:textStyle="bold" />
 
     <TextView
         android:id="@+id/you"
@@ -34,63 +53,85 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="63dp"
-        android:layout_marginEnd="171dp"
-        android:layout_marginRight="171dp"
-        android:text="상대 역: " />
+        android:layout_marginTop="59dp"
+        android:layout_marginEnd="120dp"
+        android:layout_marginRight="120dp"
+        android:text="상대 역: "
+        android:textStyle="bold" />
 
 
     <TextView
-        android:id="@+id/recommending_station"
-        android:layout_width="225dp"
-        android:layout_height="97dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
+        android:id="@+id/middleStation"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="140dp"
-        android:layout_marginLeft="140dp"
-        android:layout_marginEnd="57dp"
-        android:layout_marginRight="57dp"
-        android:layout_marginBottom="522dp"
-        android:text="추천 역 🚇"
+        android:layout_marginTop="137dp"
+        android:layout_marginEnd="187dp"
+        android:layout_marginRight="187dp"
+        android:text="999"
         android:textSize="30dp"
         android:textStyle="bold" />
 
     <TextView
         android:id="@+id/my_route"
-        android:layout_width="225dp"
-        android:layout_height="97dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginEnd="92dp"
-        android:layout_marginRight="92dp"
-        android:layout_marginBottom="371dp"
-        android:text="나의 경로 🚇"
-        android:textSize="30dp" />
+        android:layout_marginBottom="471dp"
+        android:text="나의 경로"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/printMyRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/my_route"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="431dp"
+        android:text="경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/myCosts"
+        android:layout_width="wrap_content"
+        android:layout_height="32dp"
+        android:layout_alignBottom="@+id/printMyRoute"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="386dp"
+        android:text="소요 시간 0분, 소요 비용 0원" />
 
     <TextView
         android:id="@+id/your_route"
-        android:layout_width="225dp"
-        android:layout_height="97dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginStart="110dp"
-        android:layout_marginLeft="110dp"
-        android:layout_marginEnd="91dp"
-        android:layout_marginRight="91dp"
-        android:layout_marginBottom="208dp"
-        android:text="상대 경로 🚇"
-        android:textSize="30dp" />
+        android:layout_marginBottom="319dp"
+        android:text="상대의 경로"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/printYourRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/your_route"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="275dp"
+        android:text="경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로"
+        android:textStyle="bold" />
+
+
+    <TextView
+        android:id="@+id/yourCosts"
+        android:layout_width="wrap_content"
+        android:layout_height="31dp"
+        android:layout_alignBottom="@+id/printYourRoute"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="231dp"
+        android:text="소요 시간 0분, 소요 비용 0원" />
 
     <ImageButton
         android:id="@+id/button"

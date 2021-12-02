@@ -36,7 +36,8 @@ public class ResultMapActivity extends AppCompatActivity {
     String channelID = "channelID";
     NotificationManager mNotificationManager;
     NotificationChannel channel;
-    public boolean getPackageList() { // 앱 설치 되어있는지 확인하는 메서드
+    public boolean getPackageList()
+    { // 앱 설치 되어있는지 확인하는 메서드
         boolean isExist = false;
 
         PackageManager pkgMgr = getPackageManager();
@@ -64,10 +65,7 @@ public class ResultMapActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.result_map_page);
 
-
-
-        // 알람 관련
-        Bitmap mLargeIconForNoti = BitmapFactory.decodeResource(getResources(), R.drawable.bell);
+        Bitmap mLargeIconForNoti = BitmapFactory.decodeResource(getResources(), R.drawable.bell); // 알람 관련
         PendingIntent mPendingIntent  = PendingIntent.getActivity(ResultMapActivity.this,0,new Intent(getApplicationContext(), ResultMapActivity.class), PendingIntent.FLAG_UPDATE_CURRENT);
 
         ImageView goback = findViewById(R.id.goback); // 뒤로가기 버튼
@@ -95,6 +93,18 @@ public class ResultMapActivity extends AppCompatActivity {
 
         String alarmqq = intent.getExtras().getString("alarmTime"); // 알람 시간 스트링. split으로 배열로 만들어서
         String[] alarmArr = alarmqq.split("@"); // for(Integer.parseInt(arr[i])) 마다 알람 울리게.
+
+
+
+        TextView test = findViewById(R.id.test);
+        test.setText(alarmqq);
+
+        TextView test2 = findViewById(R.id.test2);
+        test2.setText(Integer.toString(Integer.parseInt(alarmArr[0])*1000 - 60000));
+
+
+
+
 
         Handler handler = new Handler();
 
@@ -162,10 +172,8 @@ public class ResultMapActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "알람이 설정되었습니다.", Toast.LENGTH_SHORT).show();
                 //NotificationCompat.Builder mbuilder;
 
-
-
-
-                for (int i=0; i<alarmArr.length; i++) {
+                for (int i=0; i<alarmArr.length; i++)
+                {
 
                     Timer timer = new Timer();
                     TimerTask func = new TimerTask() {
@@ -197,7 +205,7 @@ public class ResultMapActivity extends AppCompatActivity {
                             mNotificationManager.notify(0, mbuilder.build());
                         }
                     };
-                    timer.schedule(func, 0, Integer.parseInt(alarmArr[i])*1000 - 6000); // 내려야 할 시간 1분 전에 알림
+                    timer.schedule(func, Integer.parseInt(alarmArr[0])*1000 - 60000, Integer.parseInt(alarmArr[i])*1000 - 60000); // 내려야 할 시간 1분 전에 알림
                 }
 
 

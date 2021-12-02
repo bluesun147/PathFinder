@@ -35,8 +35,8 @@ public class MiddleSearchActivity extends AppCompatActivity
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_SEARCH) {  // 입력 후 돋보기 누르면
+                    Toast.makeText(getApplicationContext(), "나의 역 입력됨.", Toast.LENGTH_SHORT).show();
                     String me = enterMe.getText().toString(); // enterMe에 나의 역 저장
-
                     Intent intent = new Intent(getBaseContext(), MiddleResultActivity.class);
                     intent.putExtra("me", me); // MiddleResultActivity에 출발역 값 저장
 
@@ -45,6 +45,7 @@ public class MiddleSearchActivity extends AppCompatActivity
                         @Override
                         public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                             if (actionId == EditorInfo.IME_ACTION_SEARCH) {  // 입력 후 돋보기 누르면 search_page_start로 넘어감. 누르면 searchStationActivity 바뀜
+                                Toast.makeText(getApplicationContext(), "상대 역 입력됨.", Toast.LENGTH_SHORT).show();
                                 String you = enterYou.getText().toString(); // end에 도착 역 저장
 
                                 intent.putExtra("you", you);
