@@ -24,7 +24,6 @@
         <activity android:name=".MenuActivity"/>
         <activity android:name=".SearchActivity"/>
         <activity android:name=".SavedRouteActivity"/>
-        <activity android:name=".SearchStationActivity"/>
         <activity android:name=".ResultActivity"/>
         <activity android:name=".MiddleSearchActivity"/>
         <activity android:name=".MiddleResultActivity"/>

@@ -1,141 +1,141 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout6"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
     <!-- ResultMapActivity -->
-
-    <ImageView
-        android:id="@+id/circle"
-        android:layout_width="146dp"
-        android:layout_height="143dp"
-        android:src="@drawable/twocircle" />
 
 
     <ImageView
         android:id="@+id/goback"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="345dp"
-        android:layout_marginLeft="345dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="9dp"
-        android:layout_marginRight="9dp"
-        android:src="@drawable/goback" />
-
-    <TextView
-        android:id="@+id/end"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="70dp"
-        android:layout_marginEnd="125dp"
-        android:layout_marginRight="125dp"
-        android:textStyle="bold"
-        android:text="도착역: " />
+        android:layout_marginTop="16dp"
+        android:src="@drawable/goback"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.947"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/start"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="69dp"
-        android:layout_marginEnd="266dp"
-        android:layout_marginRight="266dp"
+        android:layout_marginTop="80dp"
+        android:text="출발역: "
         android:textStyle="bold"
-        android:text="출발역: " />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.304"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/end"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="80dp"
+        android:text="도착역: "
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.728"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="경로 저장"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.286"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/save" />
+
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_width="146dp"
+        android:layout_height="143dp"
+        android:src="@drawable/twocircle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/save"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="86dp"
-        android:layout_marginLeft="86dp"
-        android:layout_marginTop="121dp"
-        android:src="@drawable/save" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/save"
-        android:layout_alignBottom="@+id/save"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginStart="70dp"
-        android:layout_marginLeft="70dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="-24dp"
-        android:text="경로 저장" />
+        android:src="@drawable/save"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.181" />
 
     <ImageView
         android:id="@+id/bell"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="118dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginRight="106dp"
-        android:src="@drawable/bell" />
+        android:src="@drawable/bell"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.744"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.179" />
 
     <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/bell"
-        android:layout_alignBottom="@+id/save"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginTop="4dp"
-        android:layout_marginEnd="106dp"
-        android:layout_marginRight="106dp"
-        android:layout_marginBottom="-23dp"
-        android:text="알람" />
+        android:text="알람"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.742"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bell" />
 
     <com.github.chrisbanes.photoview.PhotoView
         android:id="@+id/map"
-        android:layout_width="401dp"
-        android:layout_height="385dp"
-        android:layout_alignBottom="@+id/circle"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="1dp"
-        android:layout_marginRight="1dp"
-        android:layout_marginBottom="-433dp"
-        android:src="@drawable/mapjpg" />
+        android:layout_width="516dp"
+        android:layout_height="526dp"
+        android:src="@drawable/mapjpg"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.697" />
 
     <TextView
         android:id="@+id/printRecommRoute"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="108dp"
         android:text="경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로 - 경로"
-        android:textStyle="bold" />
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.891" />
 
     <TextView
         android:id="@+id/recommCosts"
         android:layout_width="wrap_content"
         android:layout_height="30dp"
-        android:layout_alignBottom="@+id/printRecommRoute"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="53dp"
-        android:text="소요 시간 0분, 소요 비용 0원" />
+        android:text="소요 시간 0분, 소요 비용 0원"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.954" />
 
 
-</RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
