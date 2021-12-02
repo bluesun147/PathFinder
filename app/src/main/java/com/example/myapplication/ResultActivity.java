@@ -87,7 +87,7 @@ public class ResultActivity extends AppCompatActivity {
 
             // recommRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][0] + "초, 소요 비용 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][2] + "원";
             
-            recommRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][0] / 60 + "분" +d.DijkstraAlgorithmFull2(startstation, endstation)[2][0] % 60 + "초, "+ "소요 비용 " +d.DijkstraAlgorithmFull2(startstation, endstation)[2][2] + "원";
+            recommRouteCost = "소요 시간 "+d.DijkstraAlgorithmFull2(startstation, endstation)[2][0] / 60 + "분" +d.DijkstraAlgorithmFull2(startstation, endstation)[2][0] % 60 + "초, " + "소요 비용 " +d.DijkstraAlgorithmFull2(startstation, endstation)[2][2] + "원";
             // 소요 시간, 비용
             recommCosts.setText(recommRouteCost);
 

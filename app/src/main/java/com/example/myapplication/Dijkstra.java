@@ -100,13 +100,13 @@ public class Dijkstra extends ResultControler
 		for(int i = 0; i < 3; i++)
 		{
 			if (i == 0)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 0), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationMe(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 0), lineStrArr, dataDarr, i);
 
 			else if (i == 1)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 2), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationMe(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 2), lineStrArr, dataDarr, i);
 
 			else if (i == 2)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 3), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationMe(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 3), lineStrArr, dataDarr, i);
 		}
 		return lineStrArr;
 	}
@@ -120,13 +120,13 @@ public class Dijkstra extends ResultControler
 		for(int i = 0; i < 3; i++)
 		{
 			if (i == 0)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 0), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationMe(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 0), lineStrArr, dataDarr, i);
 
 			else if (i == 1)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 2), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationMe(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 2), lineStrArr, dataDarr, i);
 
 			else if (i == 2)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 3), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationMe(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 3), lineStrArr, dataDarr, i);
 		}
 
 		return dataDarr;
@@ -143,13 +143,13 @@ public class Dijkstra extends ResultControler
 		for(int i = 0; i < 3; i++)
 		{
 			if (i == 0)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 0), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationYou(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 0), lineStrArr, dataDarr, i);
 
 			else if (i == 1)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 2), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationYou(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 2), lineStrArr, dataDarr, i);
 
 			else if (i == 2)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 3), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationYou(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 3), lineStrArr, dataDarr, i);
 		}
 
 		return lineStrArr;
@@ -166,13 +166,13 @@ public class Dijkstra extends ResultControler
 		for(int i = 0; i < 3; i++)
 		{
 			if (i == 0)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 0), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationYou(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 0), lineStrArr, dataDarr, i);
 
 			else if (i == 1)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 2), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationYou(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 2), lineStrArr, dataDarr, i);
 
 			else if (i == 2)
-				super.calculateData(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 3), lineStrArr, dataDarr, i, alarmCount);
+				super.meetUpStationYou(startStn, endStn, DijkstraAlgorithm(startStn, endStn, 3), lineStrArr, dataDarr, i);
 		}
 
 		return dataDarr;

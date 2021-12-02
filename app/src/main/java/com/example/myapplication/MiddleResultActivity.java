@@ -82,7 +82,9 @@ public class MiddleResultActivity extends AppCompatActivity {
             //myAlarmTime = d.DijkstraAlgorithmFull3(mystation, Integer.parseInt(myRouteArr[myRouteArr.length-1]))[2];
 
 
-            myRouteCost = "소요 시간 "+d.DijkstraMeetUpMyData(mystation, yourstation)[2][0] + "초, 소요 비용 "+d.DijkstraMeetUpMyData(mystation, yourstation)[2][2] + "원";
+            //myRouteCost = "소요 시간 "+d.DijkstraMeetUpMyData(mystation, yourstation)[2][0] + "초, 소요 비용 "+d.DijkstraMeetUpMyData(mystation, yourstation)[2][2] + "원";
+            myRouteCost = "소요 시간 "+d.DijkstraMeetUpMyData(mystation, yourstation)[2][0] / 60 + "분" + d.DijkstraMeetUpMyData(mystation, yourstation)[2][0] % 60 + "초, "+ "소요 비용 "+d.DijkstraMeetUpMyData(mystation, yourstation)[2][2] + "원";
+
             // 소요 시간, 비용
             myCosts.setText(myRouteCost);
 
@@ -98,7 +100,9 @@ public class MiddleResultActivity extends AppCompatActivity {
             //yourAlarmTime = d.DijkstraAlgorithmFull3(mystation, Integer.parseInt(yourRouteArr[0]))[2]; //==> 이게 문제.
             yourAlarmTime = d.DijkstraAlgorithmFull3(mystation, yourstation)[2]; //==> 이게 문제.
 
-            yourRouteCost = "소요 시간 "+d.DijkstraMeetUpYourData(mystation, yourstation)[2][0] + "초, 소요 비용 "+d.DijkstraMeetUpYourData(mystation,yourstation)[2][2] + "원";
+            //yourRouteCost = "소요 시간 "+d.DijkstraMeetUpYourData(mystation, yourstation)[2][0] + "초, 소요 비용 "+d.DijkstraMeetUpYourData(mystation,yourstation)[2][2] + "원";
+            yourRouteCost = "소요 시간 "+d.DijkstraMeetUpYourData(mystation, yourstation)[2][0] / 60 + "분" + d.DijkstraMeetUpYourData(mystation, yourstation)[2][0] % 60 + "초, "+ "소요 비용 "+d.DijkstraMeetUpYourData(mystation, yourstation)[2][2] + "원";
+
             // 소요 시간, 비용
             yourCosts.setText(yourRouteCost);
         }
