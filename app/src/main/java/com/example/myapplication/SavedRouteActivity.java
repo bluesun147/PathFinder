@@ -54,7 +54,8 @@ public class SavedRouteActivity extends AppCompatActivity {
             cursor.close();
         }
 
-        Button add = (Button) findViewById(R.id.add);
+        Button add = findViewById(R.id.add);
+        Button delete = findViewById(R.id.delete);
         ListView = (android.widget.ListView)findViewById(R.id.list);
 
         //Datas 안에 값이 없는데 어댑터 연결되면 오류나서 Datas안에 값이 있을 때만 연결함
@@ -72,26 +73,49 @@ public class SavedRouteActivity extends AppCompatActivity {
                 Intent intent = getIntent(); /////////////////////////////////////////////////////////////////////////////
 
                 com.example.myapplication.sampleData.b = intent.getExtras().getString("route"); // 경로추가 버튼 누르면 입력한 값을 추가
-
-                if (Datas.isEmpty()) { //Datas 리스트가 비어있을 때 만약 비어있다면 값을 추가하고 list와 listview연결
-                    data = sampleData.sampleReturn(); //데이터를 저장할 것이므로 경로 스트링 값이 리턴되는 메소드를 불러와서 그 값을 data에 저장해준다.
-                    sql = String.format("INSERT INTO history VALUES(NULL,'%s');", data); //db에 데이터를 추가하는 쿼리
-                    db.execSQL(sql);
-                    Datas.add(data); //리스트에도 값이 들어왔음을 알려줌 그래야 리스트뷰에서 확인이 가능하다네요
-                    Adapter = new ArrayAdapter<String>(SavedRouteActivity.this, android.R.layout.simple_list_item_1, Datas);
-                    ListView.setAdapter(Adapter);
-                }
-                else {  //Datas 안에 값이 존재하는 경우
-                    data = sampleData.sampleReturn();
-                    //데이터를 저장할 것이므로 경로 스트링 값이 리턴되는 메소드를 불러와서 그 값을 data에 저장해준다.
-                    sql = String.format("INSERT INTO history VALUES(NULL,'%s');", data);
-                    db.execSQL(sql);
-                    Datas.add(data);
-                    Adapter.notifyDataSetChanged(); //Adapter에 list의 데이터 값이 변경되었음을 전달, 사용자가 보고 있는 화면 갱신
+                switch (v.getId())
+                {
+                    case R.id.add: //추가 버튼을 클릭했을 경우
+                        if (Datas.isEmpty()) { //Datas 리스트가 비어있을 때 만약 비어있다면 값을 추가하고 list와 listview연
+                            data = sampleData.sampleReturn();
+                            //data = lineStrArr.getText().toString();
+                            //데이터를 저장할 것이므로 경로 스트링 값이 리턴되는 메소드를 불러와서 그 값을 data에 저장해준다.
+                            sql = String.format("INSERT INTO history VALUES(NULL,'%s');", data); //db에 데이터를 추가하는 쿼리
+                            db.execSQL(sql);
+                            Datas.add(data);
+                            Adapter = new ArrayAdapter<String>(SavedRouteActivity.this, android.R.layout.simple_list_item_1, Datas);
+                            ListView.setAdapter(Adapter);
+                        }
+                        //Datas 안에 값이 존재하는 경우
+                        else {
+                            data = sampleData.sampleReturn();
+                            //data = lineStrArr.getText().toString();
+                            //데이터를 저장할 것이므로 경로 스트링 값이 리턴되는 메소드를 불러와서 그 값을 data에 저장해준다.
+                            sql = String.format("INSERT INTO history VALUES(NULL,'%s');", data);
+                            db.execSQL(sql);
+                            Datas.add(data);
+                            Adapter.notifyDataSetChanged(); //Adapter에 list의 데이터 값이 변경되었음을 알려주어 사용자가 보고 있는 화면 갱신
+                        }
+                        break;
+                    case R.id.delete: //삭제 버튼을 클릭했을 경우
+                        if(!Datas.isEmpty()){
+                            sql = "SELECT * FROM history;";
+                            Cursor cs = db.rawQuery(sql,null);
+                            int count = cs.getCount();
+                            cs.moveToLast();
+                            int lastid = cs.getInt(0); //커서가 읽은 0번쨰를 lastid로 설정
+                            sql = "DELETE FROM history WHERE _id="+lastid+";"; //lastid에 해당하는 정보 삭제
+                            db.execSQL(sql);
+                            Datas.remove(count-1);
+                            Adapter.notifyDataSetChanged();
+                            cs.close();
+                        }
+                        break;
                 }
             }
         };
         add.setOnClickListener(buttonListener);
+        delete.setOnClickListener(buttonListener);
 
         goback.setOnClickListener(new View.OnClickListener() { // 메뉴 눌렀을 시 메뉴 페이지로 이동
             public void onClick(View view) {

@@ -207,36 +207,6 @@ public class ResultMapActivity extends AppCompatActivity {
                     };
                     timer.schedule(func, Integer.parseInt(alarmArr[0])*1000 - 60000, Integer.parseInt(alarmArr[i])*1000 - 60000); // 내려야 할 시간 1분 전에 알림
                 }
-
-
-
-
-                /*// 빌드 API 버전이 26이상이면 알림채널을 부여하는 메소드
-                if (Build.VERSION.SDK_INT >= 26)
-                {
-                    channel = new NotificationChannel(channelID, "채널 이름", NotificationManager.IMPORTANCE_DEFAULT);
-                    ((NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE)).createNotificationChannel(channel);
-                    mbuilder = new NotificationCompat.Builder(ResultMapActivity.this, channelID);
-                } else {
-                    mbuilder = new NotificationCompat.Builder(ResultMapActivity.this);
-                }
-
-                // notification 설정
-                mbuilder.setSmallIcon(R.drawable.bell)
-                        // 메소드 체인
-                        .setContentTitle("1분후에 내려야합니다!!")
-                        //.setContentText(" 알림 내용!! ")
-                        .setDefaults(Notification.DEFAULT_SOUND)
-                        .setLargeIcon(mLargeIconForNoti)
-                        // 우선순위
-                        .setPriority(NotificationCompat.PRIORITY_DEFAULT)
-                        .setContentIntent(mPendingIntent)
-                        .setAutoCancel(true);
-
-
-                mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
-                mNotificationManager.notify(0, mbuilder.build());*/
-
             }
         });
 
